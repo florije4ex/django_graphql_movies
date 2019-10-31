@@ -23,7 +23,7 @@ query getActors {
 }
 ```
 
-查询单个电影
+查询单个movie
 ```text
 query getMovie {
   movie(id: 1) {

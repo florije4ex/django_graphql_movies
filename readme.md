@@ -115,4 +115,7 @@ curl -X POST -H "Content-Type: application/json" --data '{ "query": "{ actors { 
 
 curl -X POST http://127.0.0.1:8000/graphql/ -H 'Content-Type: application/json' -d '{"query": "{actor(id:1){id name}}"}'
 {"data":{"actor":{"id":"1","name":"Michael B. Jordan"}}}
+
+GET方式：http://127.0.0.1:8000/graphql/?query={actor(id:2){id name}}
+curl -X GET 'http://127.0.0.1:8000/graphql/?query=%7bactor(id%3a2)%7bid+name%7d%7d'
 ```

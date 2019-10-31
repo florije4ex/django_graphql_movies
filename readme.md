@@ -109,8 +109,9 @@ mutation updateMovie {
 ## http post request
 ```text
 curl -X POST -H "Content-Type: application/json" --data '{ "query": "{ actors { name } }" }' http://127.0.0.1:8000/graphql/
+{"data":{"actors":[{"name":"Michael B. Jordan"},{"name":"Sylvester Stallone"},{"name":"Tom Hanks"}]}}
 
-will return value:
 
-{"data":{"actors":[{"name":"Michael B. Jordan"},{"name":"Sylvester Stallone"},{"name":"Tom Hanks"}]}}boqings-MacBook-Pro:~ boqingfu$
+curl -X POST http://127.0.0.1:8000/graphql/ -H 'Content-Type: application/json' -d '{"query": "{actor(id:1){id name}}"}'
+{"data":{"actor":{"id":"1","name":"Michael B. Jordan"}}}
 ```

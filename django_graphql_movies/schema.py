@@ -1,14 +1,15 @@
-from graphene import ObjectType, Schema, Field
+import graphene
 from movies import schema
 from graphene_django.debug import DjangoDebug
 
 
-class Query(schema.Query, ObjectType):
-    debug = Field(DjangoDebug, name='_debug')
+class Query(schema.Query, graphene.ObjectType):
+    # Debug field
+    debug = graphene.Field(DjangoDebug, name='_debug')
 
 
-class Mutation(schema.Mutation, ObjectType):
+class Mutation(schema.Mutation, graphene.ObjectType):
     pass
 
 
-schema = Schema(query=Query, mutation=Mutation)
+schema = graphene.Schema(query=Query, mutation=Mutation)
